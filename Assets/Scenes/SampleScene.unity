@@ -1045,6 +1045,8 @@ GameObject:
   - component: {fileID: 972234538}
   - component: {fileID: 972234537}
   - component: {fileID: 972234536}
+  - component: {fileID: 972234543}
+  - component: {fileID: 972234542}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -1208,7 +1210,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!135 &972234538
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1216,7 +1218,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972234535}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3a6f9e574ee6bd5408d7bd3afb7adbf5, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1302,6 +1304,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &972234542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972234535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58fdaaee25d11f42ace5e70f83d974c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BallRespawn
+  respawnAction: {fileID: 0}
+  head: {fileID: 0}
+  distance: 0.6
+  heightOffset: -0.3
+--- !u!114 &972234543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972234535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04ea47ec435d0f49bb5b0bde3b2fcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BallShot
 --- !u!1 &1020249912 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -1623,6 +1653,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9ec871256c2794db6980d2613de254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Basket
+  hoopCenter: {fileID: 0}
+  confetti: {fileID: 0}
+  tier1: 2
+  tier2: 4
+  tier3: 6
+  minConfetti: 30
+  maxConfetti: 300
+  maxDistanceForConfetti: 8
 --- !u!1001 &1490595443
 PrefabInstance:
   m_ObjectHideFlags: 0

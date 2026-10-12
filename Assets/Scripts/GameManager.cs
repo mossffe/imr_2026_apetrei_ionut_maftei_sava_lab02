@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void AddPlayerScore(int value)
-    {
+    {    
         score += value;
         UpdateScoreLabel();
     }
