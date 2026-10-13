@@ -4,15 +4,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 [RequireComponent(typeof(Rigidbody))]
 public class BallShot : MonoBehaviour
 {
-    public Vector3 ThrowOrigin { get; set; }
-    public bool HasScored { get; set; }
+    public Vector3 throwOrigin;
+    public bool scoreDisabled = false;
 
     UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grab;
 
     void Awake()
     {
         grab = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
-        ThrowOrigin = transform.position;
+        throwOrigin = transform.position;
     }
 
     void OnEnable()
@@ -27,10 +27,12 @@ public class BallShot : MonoBehaviour
         grab.selectExited.RemoveListener(OnReleased);
     }
 
-    void OnGrabbed(SelectEnterEventArgs args) => HasScored = false;
+    void OnGrabbed(SelectEnterEventArgs args) 
+    {
+    }
 
     void OnReleased(SelectExitEventArgs args)
     {
-        ThrowOrigin = args.interactorObject.transform.position;
+        throwOrigin = args.interactorObject.transform.position;
     }
 }

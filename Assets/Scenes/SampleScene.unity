@@ -1047,6 +1047,7 @@ GameObject:
   - component: {fileID: 972234536}
   - component: {fileID: 972234543}
   - component: {fileID: 972234542}
+  - component: {fileID: 972234544}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -1171,7 +1172,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_ThrowVelocityScale: 3
+  m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
   m_UnparentTransformOnGrab: 1
@@ -1316,11 +1317,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58fdaaee25d11f42ace5e70f83d974c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BallRespawn
-  respawnAction: {fileID: 0}
-  head: {fileID: 0}
+  respawnAction: {fileID: -8069514856583376848, guid: b6d5c44ebe3244b7692e81ae8265eb22, type: 3}
+  head: {fileID: 1020249918}
   distance: 0.6
   heightOffset: -0.3
 --- !u!114 &972234543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 972234535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04ea47ec435d0f49bb5b0bde3b2fcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BallShot
+--- !u!114 &972234544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1381,6 +1394,11 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!4 &1020249918 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 1490595443}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1128604662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,7 +1671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9ec871256c2794db6980d2613de254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Basket
-  hoopCenter: {fileID: 0}
+  hoopCenter: {fileID: 1327518424}
   confetti: {fileID: 0}
   tier1: 2
   tier2: 4

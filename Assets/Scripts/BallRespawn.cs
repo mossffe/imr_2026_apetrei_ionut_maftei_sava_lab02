@@ -28,14 +28,19 @@ public class BallRespawn : MonoBehaviour
 
     void OnDisable() => respawnAction.action.performed -= OnPressed;
 
-    void OnPressed(InputAction.CallbackContext ctx) => Respawn();
+    void OnPressed(InputAction.CallbackContext ctx)
+    {
+        Respawn();
+    }
 
     public void Respawn()
     {
         if (grab.isSelected)
+        {
             grab.interactionManager.CancelInteractableSelection((UnityEngine.XR.Interaction.Toolkit.Interactables.IXRSelectInteractable)grab);
+        }
 
-        rb.linearVelocity = Vector3.zero;   // Unity 2022 or older: rb.velocity
+        rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 
         Vector3 forward = head.forward;
@@ -43,7 +48,7 @@ public class BallRespawn : MonoBehaviour
         forward.Normalize();
 
         transform.position = head.position + forward * distance + Vector3.up * heightOffset;
-        shot.ThrowOrigin = head.position;
-        shot.HasScored = false;
+        shot.throwOrigin = head.position;
+        shot.scoreDisabled = false;
     }
 }

@@ -51,15 +51,13 @@ public class BasketCollision : MonoBehaviour
         if (other.gameObject.name != "Ball") return;
 
         BallShot shot = other.GetComponent<BallShot>();
-        if (shot == null || shot.HasScored) return;
+        if (shot == null || shot.scoreDisabled) return;
 
         // Only count the ball if it's moving downward through the hoop
         Rigidbody rb = other.attachedRigidbody;
         if (rb != null && rb.linearVelocity.y > 0f) return;
 
-        shot.HasScored = true;
-
-        Vector3 from = shot.ThrowOrigin;
+        Vector3 from = shot.throwOrigin;
         Vector3 to = hoopCenter.position;
         from.y = 0f;
         to.y = 0f;
